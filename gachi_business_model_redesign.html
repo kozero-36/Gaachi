@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi Business Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: #EDE8DC;
+            width: 1920px;
+            height: 1080px;
+            padding: 80px 100px;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+        
+        h1 {
+            font-size: 5em;
+            color: #3d3d3d;
+            margin-bottom: 120px;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+        
+        .flow-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+        
+        .flow-box {
+            background: #D8D0C0;
+            padding: 50px 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 650px;
+        }
+        
+        .flow-box:first-child {
+            border-radius: 15px 0 0 15px;
+        }
+        
+        .flow-box:last-child {
+            border-radius: 0 15px 15px 0;
+        }
+        
+        .flow-box:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid #D8D0C0;
+            z-index: 1;
+        }
+        
+        .icon {
+            font-size: 5em;
+            text-align: center;
+            margin-bottom: 40px;
+            filter: grayscale(100%);
+        }
+        
+        .box-title {
+            font-size: 2.8em;
+            color: #3d3d3d;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        
+        .box-subtitle {
+            font-size: 1.8em;
+            color: #5d5d5d;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .box-content {
+            flex: 1;
+        }
+        
+        .box-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .box-content li {
+            font-size: 1.4em;
+            color: #4d4d4d;
+            line-height: 1.9;
+            margin-bottom: 22px;
+            padding-left: 25px;
+            position: relative;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .box-content li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #8d8d8d;
+            font-size: 1.3em;
+        }
+        
+        strong {
+            color: #2d2d2d;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>Gachi Business Model</h1>
+        
+        <div class="flow-container">
+            <div class="flow-box">
+                <div class="icon">🎙️</div>
+                <div class="box-title">Authors</div>
+                <div class="box-subtitle">(The Elderly, 50-80s)</div>
+                <div class="box-content">
+                    <ul>
+                        <li>Share life-long experiences via simple daily voice recordings</li>
+                        <li>Service is <strong>100% FREE</strong> to encourage participation and combat retirement blues</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flow-box">
+                <div class="icon">🤖</div>
+                <div class="box-title">Gachi Platform</div>
+                <div class="box-subtitle">(The AI Hub)</div>
+                <div class="box-content">
+                    <ul>
+                        <li><strong>AI Auto-Editing:</strong> Converts voice to structured, professional memoirs without human editors</li>
+                        <li><strong>Smart Matching:</strong> Connects stories to the right audience</li>
+                        <li><strong>Revenue:</strong> 30% Platform Commission</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="flow-box">
+                <div class="icon">📖</div>
+                <div class="box-title">Readers</div>
+                <div class="box-subtitle">(Knowledge Seekers)</div>
+                <div class="box-content">
+                    <ul>
+                        <li>People looking for specific, real-world experience (e.g., "Fukuoka manufacturing transfer" or "Yoyogi cafe management")</li>
+                        <li><strong>Cost:</strong> ¥2,000–5,000 per book</li>
+                        <li><strong>Direct Support:</strong> 70% of revenue goes directly to the author</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

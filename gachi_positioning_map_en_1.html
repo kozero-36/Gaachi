@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi Positioning Maps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .maps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .map-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .map-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 600px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .axis-label {
+            font-size: 14px;
+            font-weight: 600;
+            fill: #2c3e50;
+        }
+        
+        .competitor {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .competitor:hover {
+            opacity: 0.8;
+        }
+        
+        .competitor-circle {
+            stroke: white;
+            stroke-width: 3;
+        }
+        
+        .competitor-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        
+        .gachi-highlight {
+            filter: drop-shadow(0 0 15px rgba(255, 68, 0, 0.6));
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .legend-text {
+            font-size: 14px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .arrow-marker {
+            fill: #2c3e50;
+        }
+        
+        .axis-arrow {
+            stroke: #2c3e50;
+            stroke-width: 3;
+            marker-end: url(#arrowhead);
+        }
+        
+        .insights {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        .insights h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .insight-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .insight-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .insight-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .insight-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .insight-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Gachi Positioning Maps</h1>
+        <p class="subtitle">Competitor Analysis - Voice × AI × Experience Knowledge Marketplace</p>
+        
+        <div class="maps-grid">
+            <!-- Map 1: Input Method vs AI Automation -->
+            <div class="map-section">
+                <div class="map-title">📊 Map 1: Input Method × AI Automation Level</div>
+                <div class="chart-container">
+                    <svg id="map1" viewBox="0 0 1000 600"></svg>
+                </div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #3498db;"></div>
+                        <span class="legend-text">Sentimental Value (Family-focused)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e67e22;"></div>
+                        <span class="legend-text">Practical Value (Experience Knowledge)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #2ecc71;"></div>
+                        <span class="legend-text">Creative Activity</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #e74c3c;"></div>
+                        <span class="legend-text">Business Know-how</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF4400; border: 3px solid #FFD700;"></div>
+                        <span class="legend-text">🌟 Gachi (New Market)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map 2: Target Age vs Monetization Source -->
+            <div class="map-section">
+                <div class="map-title">📊 Map 2: Target Age × Monetization Source</div>
+                <div class="chart-container">
+                    <svg id="map2" viewBox="0 0 1000 600"></svg>
+                </div>
+            </div>
+            
+            <!-- Map 3: Price vs Content Quality -->
+            <div class="map-section">
+                <div class="map-title">📊 Map 3: Price Range × Content Quality (AI Editing)</div>
+                <div class="chart-container">
+                    <svg id="map3" viewBox="0 0 1000 600"></svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insights">
+            <h2>💡 Strategic Insights</h2>
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h3>🎯 Gachi's Unique Position</h3>
+                    <ul>
+                        <li><strong>Voice × AI × Reader-Pays</strong> combination is world's first</li>
+                        <li>Lower barrier for elderly, deliver value to readers</li>
+                        <li>Pioneer middle ground between "sentimental memoir" and "practical knowledge"</li>
+                        <li>More specific than note, more trustworthy than Brain</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-card">
+                    <h3>⚠️ Major Threats</h3>
+                    <ul>
+                        <li><strong>MyHeritage Stories</strong> - Existing user base + AI voice = potential entry into pre-death memoir</li>
+                        <li><strong>Tell Mel</strong> - AI phone tech with similar service (English only)</li>
+                        <li><strong>Notion/ChatGPT</strong> - Young users may DIY diary→memoir</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-card">
+                    <h3>✅ Competitive Advantages</h3>
+                    <ul>
+                        <li>JP/KR dialect support (Whisper v3)</li>
+                        <li>Ultra-niche matching like "Fukuoka transfer" "Yoyogi cafe"</li>
+                        <li>Expandable to dementia prevention</li>
+                        <li>Reader-pays model = free author participation</li>
+                    </ul>
+                </div>
+                
+                <div class="insight-card">
+                    <h3>🚀 Recommended Strategy</h3>
+                    <ul>
+                        <li><strong>File patents by 2026 Q2</strong> (AI algorithm + business model)</li>
+                        <li><strong>Pilot in 5 niches</strong> (Fukuoka manufacturing, etc.)</li>
+                        <li>Partner with municipalities (elderly support budgets)</li>
+                        <li>Target 1,000 books published by 2027</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Competitor data (bubble sizes multiplied by 1.5)
+        const competitors = [
+            // Map 1 data: x=input method (0=text, 100=voice), y=AI automation (0=manual, 100=full AI)
+            {name: 'StoryWorth', x1: 10, y1: 15, size: 45, color: '#3498db', category: 'Sentimental'},
+            {name: 'Remento', x1: 75, y1: 55, size: 42, color: '#3498db', category: 'Sentimental'},
+            {name: 'Tell Mel', x1: 90, y1: 85, size: 30, color: '#3498db', category: 'Sentimental'},
+            {name: 'Storii', x1: 80, y1: 20, size: 27, color: '#3498db', category: 'Sentimental'},
+            {name: 'Memorygram', x1: 15, y1: 25, size: 33, color: '#3498db', category: 'Sentimental'},
+            {name: '自分史.com', x1: 20, y1: 10, size: 38, color: '#3498db', category: 'Sentimental'},
+            {name: 'JIBUN', x1: 18, y1: 8, size: 35, color: '#3498db', category: 'Sentimental'},
+            {name: 'Oyano Zasshi', x1: 65, y1: 30, size: 30, color: '#3498db', category: 'Sentimental'},
+            {name: 'note', x1: 12, y1: 20, size: 68, color: '#2ecc71', category: 'Creative'},
+            {name: 'Brain', x1: 8, y1: 18, size: 53, color: '#e74c3c', category: 'Business'},
+            {name: 'Udemy', x1: 25, y1: 30, size: 60, color: '#e74c3c', category: 'Business'},
+            {name: 'Gachi', x1: 85, y1: 75, size: 60, color: '#FF4400', category: 'New Market', highlight: true},
+            
+            // Map 2 data: x=target age (0=young, 100=elderly), y=monetization (0=author pays, 100=reader pays)
+            {x2: 75, y2: 20},  // StoryWorth
+            {x2: 78, y2: 22},  // Remento
+            {x2: 80, y2: 25},  // Tell Mel
+            {x2: 73, y2: 18},  // Storii
+            {x2: 72, y2: 28},  // Memorygram
+            {x2: 82, y2: 15},  // 自分史.com
+            {x2: 85, y2: 12},  // JIBUN
+            {x2: 80, y2: 17},  // Oyano Zasshi
+            {x2: 25, y2: 45},  // note
+            {x2: 30, y2: 48},  // Brain
+            {x2: 35, y2: 85},  // Udemy
+            {x2: 70, y2: 80},  // Gachi
+            
+            // Map 3 data: x=price (0=free/cheap, 100=expensive), y=AI editing quality (0=manual, 100=AI)
+            {x3: 25, y3: 15},  // StoryWorth
+            {x3: 28, y3: 55},  // Remento
+            {x3: 35, y3: 85},  // Tell Mel
+            {x3: 22, y3: 20},  // Storii
+            {x3: 30, y3: 25},  // Memorygram
+            {x3: 65, y3: 10},  // 自分史.com
+            {x3: 70, y3: 8},   // JIBUN
+            {x3: 65, y3: 30},  // Oyano Zasshi
+            {x3: 8, y3: 20},   // note
+            {x3: 10, y3: 18},  // Brain
+            {x3: 35, y3: 30},  // Udemy
+            {x3: 15, y3: 75},  // Gachi
+        ];
+
+        function createMap(svgId, xLabel, yLabel, xDataKey, yDataKey) {
+            const svg = document.getElementById(svgId);
+            const margin = {top: 40, right: 100, bottom: 100, left: 100};
+            const width = 1000 - margin.left - margin.right;
+            const height = 600 - margin.top - margin.bottom;
+            
+            // Clear SVG
+            svg.innerHTML = '';
+            
+            // Define arrowhead marker
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+            marker.setAttribute('id', 'arrowhead');
+            marker.setAttribute('markerWidth', '10');
+            marker.setAttribute('markerHeight', '10');
+            marker.setAttribute('refX', '9');
+            marker.setAttribute('refY', '3');
+            marker.setAttribute('orient', 'auto');
+            const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            polygon.setAttribute('points', '0 0, 10 3, 0 6');
+            polygon.setAttribute('class', 'arrow-marker');
+            marker.appendChild(polygon);
+            defs.appendChild(marker);
+            svg.appendChild(defs);
+            
+            // Create main group
+            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            g.setAttribute('transform', `translate(${margin.left},${margin.top})`);
+            svg.appendChild(g);
+            
+            // Draw cross-shaped axes with arrows
+            // Horizontal axis (X-axis)
+            const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            xAxis.setAttribute('class', 'axis-arrow');
+            xAxis.setAttribute('x1', 0);
+            xAxis.setAttribute('y1', height / 2);
+            xAxis.setAttribute('x2', width);
+            xAxis.setAttribute('y2', height / 2);
+            g.appendChild(xAxis);
+            
+            // Vertical axis (Y-axis)
+            const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            yAxis.setAttribute('class', 'axis-arrow');
+            yAxis.setAttribute('x1', width / 2);
+            yAxis.setAttribute('y1', height);
+            yAxis.setAttribute('x2', width / 2);
+            yAxis.setAttribute('y2', 0);
+            g.appendChild(yAxis);
+            
+            // Add axis labels
+            const xLabelLeft = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            xLabelLeft.setAttribute('class', 'axis-label');
+            xLabelLeft.setAttribute('x', 20);
+            xLabelLeft.setAttribute('y', height / 2 - 10);
+            xLabelLeft.setAttribute('text-anchor', 'start');
+            xLabelLeft.textContent = xLabel.split('←')[0].trim();
+            g.appendChild(xLabelLeft);
+            
+            const xLabelRight = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            xLabelRight.setAttribute('class', 'axis-label');
+            xLabelRight.setAttribute('x', width - 20);
+            xLabelRight.setAttribute('y', height / 2 - 10);
+            xLabelRight.setAttribute('text-anchor', 'end');
+            xLabelRight.textContent = xLabel.split('→')[1].trim();
+            g.appendChild(xLabelRight);
+            
+            const yLabelBottom = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            yLabelBottom.setAttribute('class', 'axis-label');
+            yLabelBottom.setAttribute('x', width / 2 + 10);
+            yLabelBottom.setAttribute('y', height - 10);
+            yLabelBottom.setAttribute('text-anchor', 'start');
+            yLabelBottom.textContent = yLabel.split('←')[0].trim();
+            g.appendChild(yLabelBottom);
+            
+            const yLabelTop = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            yLabelTop.setAttribute('class', 'axis-label');
+            yLabelTop.setAttribute('x', width / 2 + 10);
+            yLabelTop.setAttribute('y', 20);
+            yLabelTop.setAttribute('text-anchor', 'start');
+            yLabelTop.textContent = yLabel.split('→')[1].trim();
+            g.appendChild(yLabelTop);
+            
+            // Plot competitors
+            competitors.forEach((comp, idx) => {
+                const x = (comp[xDataKey] / 100) * width;
+                const y = height - (comp[yDataKey] / 100) * height;
+                
+                const compGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                compGroup.setAttribute('class', comp.highlight ? 'competitor gachi-highlight' : 'competitor');
+                
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('class', 'competitor-circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', comp.size);
+                circle.setAttribute('fill', comp.color);
+                circle.setAttribute('opacity', comp.highlight ? 1 : 0.75);
+                compGroup.appendChild(circle);
+                
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('class', 'competitor-label');
+                label.setAttribute('x', x);
+                label.setAttribute('y', y + 5);
+                label.setAttribute('fill', 'white');
+                label.setAttribute('font-weight', comp.highlight ? 'bold' : 'normal');
+                label.textContent = comp.name;
+                compGroup.appendChild(label);
+                
+                g.appendChild(compGroup);
+            });
+        }
+        
+        // Create all three maps
+        createMap('map1', 
+            'Text Input ← → Voice Input', 
+            'Manual Editing ← → Full AI Automation', 
+            'x1', 'y1');
+        
+        createMap('map2', 
+            'Young Users ← → Elderly Users', 
+            'Author Pays ← → Reader Pays', 
+            'x2', 'y2');
+        
+        createMap('map3', 
+            'Low Price ← → High Price', 
+            'Manual ← → High-Quality AI Editing', 
+            'x3', 'y3');
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi 3C Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: #EDE8DC;
+            width: 1920px;
+            height: 1080px;
+            padding: 80px 100px;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+        
+        h1 {
+            font-size: 5em;
+            color: #3d3d3d;
+            margin-bottom: 80px;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            flex: 1;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .column-header {
+            background: #D8D0C0;
+            padding: 40px 35px;
+            border-radius: 15px 15px 0 0;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .column-title {
+            font-size: 3em;
+            color: #3d3d3d;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        
+        .column-subtitle {
+            font-size: 1.8em;
+            color: #5d5d5d;
+            font-weight: 300;
+        }
+        
+        .column-body {
+            background: #F5F1E8;
+            padding: 40px 35px;
+            border-radius: 0 0 15px 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.6em;
+            color: #3d3d3d;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .section li {
+            font-size: 1.3em;
+            color: #4d4d4d;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .section li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #8d8d8d;
+            font-size: 1.3em;
+        }
+        
+        strong {
+            color: #2d2d2d;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>Gachi 3C Analysis</h1>
+        
+        <div class="content">
+            <!-- Customer -->
+            <div class="column">
+                <div class="column-header">
+                    <div class="column-title">Customer</div>
+                    <div class="column-subtitle">(Two-Sided Market)</div>
+                </div>
+                <div class="column-body">
+                    <div class="section">
+                        <div class="section-title">Authors (Supply Side)</div>
+                        <ul>
+                            <li><strong>Demographics:</strong> Ages 50-80, retired professionals</li>
+                            <li><strong>Pain Points:</strong> Retirement blues, social isolation, loss of identity</li>
+                            <li><strong>Needs:</strong> Self-affirmation, legacy building, supplemental income</li>
+                            <li><strong>Market Size:</strong> 45M people aged 60+ in Japan/Korea</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Readers (Demand Side)</div>
+                        <ul>
+                            <li><strong>Demographics:</strong> Ages 25-45, career professionals</li>
+                            <li><strong>Pain Points:</strong> Job transfers, career changes, specific life challenges</li>
+                            <li><strong>Needs:</strong> Ultra-specific experiential knowledge (e.g., "Fukuoka manufacturing transfer 1988")</li>
+                            <li><strong>Willingness to Pay:</strong> ¥2,000-5,000 per book</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Competitor -->
+            <div class="column">
+                <div class="column-header">
+                    <div class="column-title">Competitor</div>
+                    <div class="column-subtitle">(Market Landscape)</div>
+                </div>
+                <div class="column-body">
+                    <div class="section">
+                        <div class="section-title">Direct Competitors (Memoir)</div>
+                        <ul>
+                            <li><strong>StoryWorth/Remento:</strong> Family-pays model, text or basic AI, no marketplace</li>
+                            <li><strong>Tell Mel:</strong> Similar AI tech, English only, premium pricing</li>
+                            <li><strong>自分史.com:</strong> ¥220K author-pays, manual editing, no scalability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Adjacent Competitors (Knowledge)</div>
+                        <ul>
+                            <li><strong>note:</strong> Creative writing platform, young users, no elderly focus</li>
+                            <li><strong>Brain:</strong> Business know-how, exaggeration risk, different demographic</li>
+                            <li><strong>Udemy:</strong> Systematic courses, not personal experiential stories</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Major Threat</div>
+                        <ul>
+                            <li><strong>MyHeritage Stories:</strong> Large user base + recent AI voice feature = potential 2027 entry</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Company -->
+            <div class="column">
+                <div class="column-header">
+                    <div class="column-title">Company</div>
+                    <div class="column-subtitle">(Gachi's Strengths)</div>
+                </div>
+                <div class="column-body">
+                    <div class="section">
+                        <div class="section-title">Core Technology</div>
+                        <ul>
+                            <li><strong>AI Stack:</strong> Whisper v3 (STT) + GPT-4o/Claude (LLM) + ElevenLabs (TTS)</li>
+                            <li><strong>Patent-Pending:</strong> Active follow-up questioning algorithm</li>
+                            <li><strong>Dialect Support:</strong> Superior JP/KR dialect recognition vs all competitors</li>
+                            <li><strong>Matching:</strong> Ultra-niche tagging system for precise reader-author connections</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Business Model Innovation</div>
+                        <ul>
+                            <li><strong>Reader-Pays:</strong> World's first for memoir marketplace</li>
+                            <li><strong>Free for Authors:</strong> Zero barrier to entry, 100% free participation</li>
+                            <li><strong>70/30 Split:</strong> Authors receive 70%, platform takes 30% commission</li>
+                            <li><strong>Scalable:</strong> AI enables unlimited books without human editors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">Future Expansion</div>
+                        <ul>
+                            <li><strong>Healthcare:</strong> Voice analysis for depression/dementia early detection</li>
+                            <li><strong>B2G:</strong> Municipal partnerships for elderly welfare programs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

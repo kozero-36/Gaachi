@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi Social Impact - Revolutionary Solution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            width: 1920px;
+            height: 1080px;
+            border-radius: 0;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF4400 0%, #FF6B35 100%);
+            padding: 50px 60px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 2em;
+            opacity: 0.95;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 50px 60px;
+            gap: 40px;
+        }
+        
+        .impact-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 25px;
+            padding: 40px;
+            flex: 1;
+        }
+        
+        .impact-title {
+            font-size: 2.8em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .impact-icon {
+            font-size: 1.3em;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #ecf0f1;
+        }
+        
+        .card-icon {
+            font-size: 3.5em;
+        }
+        
+        .card-title {
+            flex: 1;
+        }
+        
+        .card-label {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .card-name {
+            font-size: 2.2em;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 18px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.35em;
+            line-height: 1.6;
+            color: #34495e;
+        }
+        
+        .feature-list li:before {
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .competitor-card .feature-list li:before {
+            content: "❌";
+        }
+        
+        .gachi-card {
+            background: linear-gradient(135deg, #fff5f0 0%, #ffe8e0 100%);
+            border: 4px solid #FF4400;
+            position: relative;
+        }
+        
+        .gachi-card .feature-list li:before {
+            content: "✅";
+            color: #2ecc71;
+        }
+        
+        .gachi-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.5em;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 5px solid #FF4400;
+        }
+        
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: 700;
+            color: #FF4400;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.3em;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .future-vision {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .vision-icon {
+            font-size: 8em;
+            opacity: 0.9;
+        }
+        
+        .vision-content {
+            flex: 1;
+        }
+        
+        .vision-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .vision-text {
+            font-size: 1.5em;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+        
+        .vision-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 1.6em;
+            font-weight: 600;
+            border-left: 5px solid #FFD700;
+        }
+        
+        strong {
+            color: #FF4400;
+            font-weight: 700;
+        }
+        
+        .gachi-card strong {
+            color: #c0392b;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 60px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .footer-highlight {
+            color: #FFD700;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>🌟 Revolutionary Social Impact</h1>
+            <div class="subtitle">How Gachi Solves Japan's Biggest Societal Crisis</div>
+        </div>
+        
+        <div class="content">
+            <!-- IMPACT 1: Retirement Blues & Social Isolation -->
+            <div class="impact-section">
+                <div class="impact-title">
+                    <span class="impact-icon">🏥</span>
+                    Impact #1: Combating Retirement Blues & Social Isolation
+                </div>
+                
+                <div class="comparison-grid">
+                    <!-- Competitors -->
+                    <div class="comparison-card competitor-card">
+                        <div class="card-header">
+                            <div class="card-icon">📚</div>
+                            <div class="card-title">
+                                <div class="card-label">Traditional Services</div>
+                                <div class="card-name">StoryWorth / 自分史.com</div>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><strong>Only family reads</strong> → No social connection beyond relatives</li>
+                            <li><strong>One-time project</strong> → No ongoing engagement or purpose</li>
+                            <li><strong>High cost barrier</strong> → ¥99-220K excludes many elderly</li>
+                            <li><strong>No community</strong> → Isolated experience, no peer connection</li>
+                            <li><strong>Passive consumption</strong> → Elderly remain recipients, not contributors</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Gachi -->
+                    <div class="comparison-card gachi-card">
+                        <div class="gachi-badge">⭐ GACHI</div>
+                        <div class="card-header">
+                            <div class="card-icon">🚀</div>
+                            <div class="card-title">
+                                <div class="card-label">Revolutionary Solution</div>
+                                <div class="card-name">Gachi Platform</div>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><strong>Public readers</strong> → Strangers value your experience = social validation</li>
+                            <li><strong>Daily engagement</strong> → AI asks questions daily = purpose & routine</li>
+                            <li><strong>100% FREE for authors</strong> → Zero barrier, anyone can participate</li>
+                            <li><strong>Active community</strong> → Reviews, ratings, reader feedback = connection</li>
+                            <li><strong>Active contributors</strong> → "My knowledge helped someone!" = self-worth restored</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="impact-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">of JP 60+ fear lonely death (内閣府)</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">45M</div>
+                        <div class="stat-label">Elderly in JP/KR suffering retirement blues</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">¥0</div>
+                        <div class="stat-label">Cost for authors vs ¥220K traditional services</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- IMPACT 2: Future Healthcare Expansion -->
+            <div class="impact-section">
+                <div class="impact-title">
+                    <span class="impact-icon">🧠</span>
+                    Impact #2: Voice Analysis for Mental Health & Disease Prevention
+                </div>
+                
+                <div class="comparison-grid">
+                    <!-- Competitors -->
+                    <div class="comparison-card competitor-card">
+                        <div class="card-header">
+                            <div class="card-icon">📝</div>
+                            <div class="card-title">
+                                <div class="card-label">Other Platforms</div>
+                                <div class="card-name">note / Brain / Remento</div>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><strong>Text-based</strong> → No voice data to analyze</li>
+                            <li><strong>Young users</strong> → Irrelevant for elderly health monitoring</li>
+                            <li><strong>No longitudinal data</strong> → One-time interaction, no pattern tracking</li>
+                            <li><strong>No health mission</strong> → Pure content platform, zero healthcare vision</li>
+                            <li><strong>Cannot scale to B2G</strong> → No value proposition for municipalities</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Gachi -->
+                    <div class="comparison-card gachi-card">
+                        <div class="gachi-badge">⭐ GACHI</div>
+                        <div class="card-header">
+                            <div class="card-icon">🔬</div>
+                            <div class="card-title">
+                                <div class="card-label">Healthcare Innovation</div>
+                                <div class="card-name">Gachi Health Platform</div>
+                            </div>
+                        </div>
+                        <ul class="feature-list">
+                            <li><strong>Daily voice recordings</strong> → Rich vocal pattern data (pitch, speed, pauses)</li>
+                            <li><strong>Elderly-focused</strong> → Exact demographic for dementia/depression risk</li>
+                            <li><strong>Longitudinal tracking</strong> → Detect changes over weeks/months = early warning</li>
+                            <li><strong>Dual mission</strong> → Social impact NOW + healthcare expansion 2028+</li>
+                            <li><strong>B2G goldmine</strong> → Municipalities pay for dementia prevention (¥billions budget)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="future-vision">
+                    <div class="vision-icon">🚀</div>
+                    <div class="vision-content">
+                        <div class="vision-title">2028+ Healthcare Expansion Roadmap</div>
+                        <div class="vision-text">
+                            <strong>Phase 1 (2026-27):</strong> Build voice database from 10,000+ elderly users<br>
+                            <strong>Phase 2 (2028):</strong> Partner with medical institutions to validate AI depression/dementia detection algorithms<br>
+                            <strong>Phase 3 (2029+):</strong> License technology to insurance companies, municipalities → <strong>¥10B+ revenue potential</strong>
+                        </div>
+                        <div class="vision-highlight">
+                            💡 NO other platform has: (1) Daily elderly voice data (2) Social engagement wrapper (3) Clear path to healthcare B2G market
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Gachi is not just a platform — it's a <span class="footer-highlight">social movement</span> solving Japan's loneliness crisis while building tomorrow's <span class="footer-highlight">preventive healthcare infrastructure</span>
+        </div>
+    </div>
+</body>
+</html>

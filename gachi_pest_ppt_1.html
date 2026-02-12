@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi PEST Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: #EDE8DC;
+            width: 1920px;
+            height: 1080px;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1 {
+            font-size: 4em;
+            color: #3d3d3d;
+            margin-bottom: 50px;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+        
+        .pest-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+        
+        .pest-box {
+            background: #D8D0C0;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pest-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #C0B8A8;
+        }
+        
+        .pest-icon {
+            font-size: 3em;
+        }
+        
+        .pest-title {
+            font-size: 2.5em;
+            color: #3d3d3d;
+            font-weight: 400;
+        }
+        
+        .pest-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pest-content li {
+            font-size: 1.15em;
+            color: #4d4d4d;
+            line-height: 1.7;
+            margin-bottom: 14px;
+            padding-left: 25px;
+            position: relative;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .opportunity li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+        
+        .threat li:before {
+            content: "⚠️";
+            position: absolute;
+            left: 0;
+            font-size: 1.1em;
+        }
+        
+        strong {
+            color: #2d2d2d;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>Gachi PEST Analysis</h1>
+        
+        <div class="pest-grid">
+            <!-- Political -->
+            <div class="pest-box">
+                <div class="pest-header">
+                    <div class="pest-icon">🏛️</div>
+                    <div class="pest-title">Political</div>
+                </div>
+                <div class="pest-content opportunity">
+                    <ul>
+                        <li><strong>Government aging policy:</strong> Japan/Korea prioritize elderly welfare (¥billions budget)</li>
+                        <li><strong>Municipal partnerships:</strong> Local governments seek loneliness prevention solutions</li>
+                        <li><strong>Healthcare subsidies:</strong> Potential B2G contracts for dementia prevention</li>
+                        <li><strong>Digital transformation:</strong> Gov pushing elderly digital literacy programs</li>
+                        <li><strong>Data privacy laws:</strong> GDPR/APPI compliant = competitive advantage</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Economic -->
+            <div class="pest-box">
+                <div class="pest-header">
+                    <div class="pest-icon">💰</div>
+                    <div class="pest-title">Economic</div>
+                </div>
+                <div class="pest-content opportunity">
+                    <ul>
+                        <li><strong>Silver economy boom:</strong> ¥100+ trillion market in JP/KR aging society</li>
+                        <li><strong>Pension income:</strong> Elderly have disposable income but seek purpose, not products</li>
+                        <li><strong>Knowledge economy:</strong> Shift from goods to experiential knowledge valued at premium</li>
+                        <li><strong>Gig economy acceptance:</strong> Elderly open to flexible income opportunities</li>
+                        <li><strong>Low barrier:</strong> FREE for authors = recession-proof supply side</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social -->
+            <div class="pest-box">
+                <div class="pest-header">
+                    <div class="pest-icon">👥</div>
+                    <div class="pest-title">Social</div>
+                </div>
+                <div class="pest-content opportunity">
+                    <ul>
+                        <li><strong>Loneliness epidemic:</strong> 40% of JP 60+ fear lonely death (内閣府) = massive pain point</li>
+                        <li><strong>Retirement blues crisis:</strong> Average retirement age 60-65, life expectancy 85+ = 20-25 years of identity loss</li>
+                        <li><strong>Nuclear family breakdown:</strong> Children move away, elderly isolated from grandchildren</li>
+                        <li><strong>Experience over theory:</strong> Young professionals value real-world experience > textbook knowledge</li>
+                        <li><strong>Legacy mindset:</strong> Elderly want to leave meaningful contribution beyond family</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Technological -->
+            <div class="pest-box">
+                <div class="pest-header">
+                    <div class="pest-icon">🤖</div>
+                    <div class="pest-title">Technological</div>
+                </div>
+                <div class="pest-content">
+                    <ul>
+                        <li class="opportunity"><strong>AI maturity:</strong> Whisper v3, GPT-4o enable human-level memoir editing at scale</li>
+                        <li class="opportunity"><strong>Voice UI adoption:</strong> Elderly prefer voice over typing (accessibility)</li>
+                        <li class="opportunity"><strong>Smartphone penetration:</strong> 70%+ of JP 60-70s own smartphones</li>
+                        <li class="opportunity"><strong>Cloud costs declining:</strong> AI inference costs ↓50% annually = better margins</li>
+                        <li class="threat"><strong>Competition risk:</strong> OpenAI/Google could build similar features (need patent protection)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi Life Editor - プロトタイプ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f5f1e8 0%, #e8dcc8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .phone {
+            width: 390px;
+            height: 844px;
+            background: white;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #f5f1e8;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            padding: 60px 20px 20px;
+            background: white;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2d2d2d;
+        }
+        
+        .logo span {
+            color: #e07842;
+            font-weight: 300;
+            font-size: 18px;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            width: 100%;
+        }
+        
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e07842, #d86638);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+        }
+        
+        .greeting {
+            flex: 1;
+        }
+        
+        .greeting h2 {
+            font-size: 16px;
+            color: #2d2d2d;
+            margin-bottom: 5px;
+        }
+        
+        .greeting p {
+            font-size: 14px;
+            color: #7d7d7d;
+        }
+        
+        .mic-container {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .mic-button {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e07842, #d86638);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(224, 120, 66, 0.3);
+        }
+        
+        .mic-button:active {
+            transform: scale(0.95);
+        }
+        
+        .mic-icon {
+            font-size: 80px;
+            color: white;
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #e07842;
+            opacity: 0;
+        }
+        
+        .recording .pulse-ring {
+            animation: pulse 1.5s ease-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+        
+        .waveform {
+            display: none;
+            gap: 4px;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+            margin-top: 30px;
+        }
+        
+        .waveform.active {
+            display: flex;
+        }
+        
+        .bar {
+            width: 4px;
+            background: #e07842;
+            border-radius: 2px;
+            animation: wave 1.2s ease-in-out infinite;
+        }
+        
+        .bar:nth-child(1) { height: 20px; animation-delay: 0s; }
+        .bar:nth-child(2) { height: 35px; animation-delay: 0.1s; }
+        .bar:nth-child(3) { height: 50px; animation-delay: 0.2s; }
+        .bar:nth-child(4) { height: 45px; animation-delay: 0.3s; }
+        .bar:nth-child(5) { height: 60px; animation-delay: 0.4s; }
+        .bar:nth-child(6) { height: 40px; animation-delay: 0.5s; }
+        .bar:nth-child(7) { height: 55px; animation-delay: 0.6s; }
+        .bar:nth-child(8) { height: 30px; animation-delay: 0.7s; }
+        .bar:nth-child(9) { height: 45px; animation-delay: 0.8s; }
+        .bar:nth-child(10) { height: 25px; animation-delay: 0.9s; }
+        
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1); }
+        }
+        
+        .status-text {
+            text-align: center;
+            font-size: 18px;
+            color: #2d2d2d;
+            margin-top: 30px;
+            font-weight: 500;
+        }
+        
+        .ai-question {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            width: 100%;
+            display: none;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        .ai-question.active {
+            display: block;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ai-question .avatar-small {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e07842, #d86638);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .ai-question p {
+            color: #2d2d2d;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .stop-button {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #d64545;
+            border: none;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 10px 30px rgba(214, 69, 69, 0.3);
+            margin: 40px auto;
+        }
+        
+        .stop-button.active {
+            display: flex;
+        }
+        
+        .stop-button:active {
+            transform: scale(0.95);
+        }
+        
+        .stop-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .story-preview {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .story-title {
+            font-size: 12px;
+            color: #7d7d7d;
+            margin-bottom: 8px;
+        }
+        
+        .story-content {
+            color: #2d2d2d;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e8e8e8;
+        }
+        
+        .nav-item {
+            text-align: center;
+            color: #7d7d7d;
+            font-size: 24px;
+            opacity: 0.5;
+        }
+        
+        .nav-item.active {
+            color: #e07842;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <div class="screen">
+            <div class="header">
+                <div class="logo">Gachi <span>Life Editor</span></div>
+            </div>
+            
+            <div class="content">
+                <div class="profile">
+                    <div class="avatar">👤</div>
+                    <div class="greeting">
+                        <h2>김영자님, 안녕하세요!</h2>
+                        <p>오늘도 이야기를 들려주세요.</p>
+                    </div>
+                </div>
+                
+                <div class="mic-container">
+                    <div class="pulse-ring"></div>
+                    <button class="mic-button" id="micButton">
+                        <span class="mic-icon">🎙️</span>
+                    </button>
+                    <button class="stop-button" id="stopButton">
+                        <div class="stop-icon"></div>
+                    </button>
+                </div>
+                
+                <div class="status-text" id="statusText">여기 눌러 말하기</div>
+                
+                <div class="waveform" id="waveform">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <div class="ai-question" id="aiQuestion">
+                    <div class="avatar-small">🤖</div>
+                    <p>오늘 가장 기억에 남는 순간은 언제였나요?</p>
+                </div>
+                
+                <div class="story-preview">
+                    <div class="story-title">지난 이야기 요약</div>
+                    <div class="story-content">
+                        어제는 손주와 공원에서<br>즐거운 시간을<br>보내셨네요. 🪑
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav">
+                <div class="nav-item active">🏠</div>
+                <div class="nav-item">📂</div>
+                <div class="nav-item">📊</div>
+                <div class="nav-item">⚙️</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const micButton = document.getElementById('micButton');
+        const stopButton = document.getElementById('stopButton');
+        const statusText = document.getElementById('statusText');
+        const waveform = document.getElementById('waveform');
+        const aiQuestion = document.getElementById('aiQuestion');
+        const micContainer = document.querySelector('.mic-container');
+        
+        let isRecording = false;
+        
+        const questions = [
+            "오늘 가장 기억에 남는 순간은 언제였나요?",
+            "그때 어떤 기분이 드셨나요?",
+            "가족들에게 들려주고 싶은 이야기가 있으신가요?",
+            "젊었을 때 가장 행복했던 순간은 언제였나요?"
+        ];
+        let questionIndex = 0;
+        
+        micButton.addEventListener('click', () => {
+            if (!isRecording) {
+                startRecording();
+            }
+        });
+        
+        stopButton.addEventListener('click', () => {
+            stopRecording();
+        });
+        
+        function startRecording() {
+            isRecording = true;
+            micContainer.classList.add('recording');
+            micButton.style.display = 'none';
+            stopButton.classList.add('active');
+            statusText.textContent = '듣고 있어요. 편안하게 말씀해주세요.';
+            waveform.classList.add('active');
+            
+            // AIの質問を3秒後に表示
+            setTimeout(() => {
+                aiQuestion.classList.add('active');
+                aiQuestion.querySelector('p').textContent = questions[questionIndex];
+                questionIndex = (questionIndex + 1) % questions.length;
+            }, 3000);
+        }
+        
+        function stopRecording() {
+            isRecording = false;
+            micContainer.classList.remove('recording');
+            micButton.style.display = 'flex';
+            stopButton.classList.remove('active');
+            statusText.textContent = '다 말했어요 (그만하기)';
+            waveform.classList.remove('active');
+            
+            // 録音停止後のフィードバック
+            setTimeout(() => {
+                statusText.textContent = '감사합니다! 이야기가 저장되었어요 ✓';
+                aiQuestion.classList.remove('active');
+            }, 500);
+            
+            // 元の状態に戻る
+            setTimeout(() => {
+                statusText.textContent = '여기 눌러 말하기';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

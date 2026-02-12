@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi Revolutionary Social Impact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: #EDE8DC;
+            width: 1920px;
+            height: 1080px;
+            padding: 80px 100px;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+        
+        h1 {
+            font-size: 4.5em;
+            color: #3d3d3d;
+            margin-bottom: 60px;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 50px;
+            flex: 1;
+        }
+        
+        .impact-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section-header {
+            font-size: 2.5em;
+            color: #3d3d3d;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .comparison-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+        
+        .comparison-box {
+            background: #D8D0C0;
+            padding: 40px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .box-label {
+            font-size: 1.4em;
+            color: #6d6d6d;
+            margin-bottom: 8px;
+            font-weight: 300;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .box-name {
+            font-size: 2.2em;
+            color: #3d3d3d;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .comparison-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .comparison-box li {
+            font-size: 1.3em;
+            color: #4d4d4d;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .traditional-box li:before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        .gachi-box {
+            background: #E8DCC8;
+            border: 3px solid #8d8d8d;
+        }
+        
+        .gachi-box li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        strong {
+            color: #2d2d2d;
+            font-weight: 600;
+        }
+        
+        .highlight-stat {
+            background: #F5F1E8;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin-top: 25px;
+            font-size: 1.25em;
+            color: #3d3d3d;
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>Revolutionary Social Impact</h1>
+        
+        <div class="impact-grid">
+            <!-- Impact 1: Retirement Blues -->
+            <div class="impact-section">
+                <div class="section-header">Impact #1: Combating Retirement Blues & Social Isolation</div>
+                
+                <div class="comparison-boxes">
+                    <div class="comparison-box traditional-box">
+                        <div class="box-label">Traditional Services</div>
+                        <div class="box-name">StoryWorth / 自分史.com</div>
+                        <ul>
+                            <li><strong>Only family reads</strong> → No social connection beyond relatives</li>
+                            <li><strong>One-time project</strong> → No ongoing engagement</li>
+                            <li><strong>High cost</strong> → ¥99-220K excludes many elderly</li>
+                            <li><strong>No community</strong> → Isolated experience</li>
+                            <li><strong>Passive role</strong> → Elderly remain recipients</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-box gachi-box">
+                        <div class="box-label">Revolutionary Solution</div>
+                        <div class="box-name">Gachi Platform</div>
+                        <ul>
+                            <li><strong>Public readers</strong> → Strangers value your experience = social validation</li>
+                            <li><strong>Daily engagement</strong> → AI asks questions daily = purpose & routine</li>
+                            <li><strong>100% FREE</strong> → Zero barrier, universal access</li>
+                            <li><strong>Active community</strong> → Reviews, ratings, feedback = connection</li>
+                            <li><strong>Contributors</strong> → "My knowledge helped!" = self-worth restored</li>
+                        </ul>
+                        <div class="highlight-stat">
+                            <strong>40%</strong> of Japanese 60+ fear lonely death (内閣府) | <strong>45M</strong> elderly in JP/KR | <strong>¥0</strong> vs ¥220K cost
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Impact 2: Healthcare -->
+            <div class="impact-section">
+                <div class="section-header">Impact #2: Voice Analysis for Mental Health & Disease Prevention</div>
+                
+                <div class="comparison-boxes">
+                    <div class="comparison-box traditional-box">
+                        <div class="box-label">Other Platforms</div>
+                        <div class="box-name">note / Brain / Remento</div>
+                        <ul>
+                            <li><strong>Text-based</strong> → No voice data to analyze</li>
+                            <li><strong>Young users</strong> → Wrong demographic for health monitoring</li>
+                            <li><strong>No longitudinal data</strong> → One-time, no pattern tracking</li>
+                            <li><strong>No health mission</strong> → Pure content platform</li>
+                            <li><strong>Cannot scale to B2G</strong> → No municipality value</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-box gachi-box">
+                        <div class="box-label">Healthcare Innovation</div>
+                        <div class="box-name">Gachi Health Platform</div>
+                        <ul>
+                            <li><strong>Daily voice recordings</strong> → Rich vocal pattern data (pitch, speed, pauses)</li>
+                            <li><strong>Elderly-focused</strong> → Exact demographic for dementia/depression risk</li>
+                            <li><strong>Longitudinal tracking</strong> → Detect changes over months = early warning</li>
+                            <li><strong>Dual mission</strong> → Social impact NOW + healthcare 2028+</li>
+                            <li><strong>B2G goldmine</strong> → Municipalities pay ¥billions for prevention</li>
+                        </ul>
+                        <div class="highlight-stat">
+                            <strong>2026-27:</strong> Build 10K+ voice database | <strong>2028:</strong> Validate AI detection | <strong>2029+:</strong> License to insurance/municipalities → <strong>¥10B+ revenue potential</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

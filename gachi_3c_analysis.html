@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi 3C Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 40px 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 50px;
+        }
+        
+        .three-c-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .c-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .c-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .customer-section {
+            border-top: 6px solid #3498db;
+        }
+        
+        .competitor-section {
+            border-top: 6px solid #e74c3c;
+        }
+        
+        .company-section {
+            border-top: 6px solid #2ecc71;
+        }
+        
+        .c-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .c-icon {
+            font-size: 3em;
+        }
+        
+        .c-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .c-content {
+            color: #34495e;
+        }
+        
+        .c-subsection {
+            margin-bottom: 20px;
+        }
+        
+        .c-subsection h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .c-subsection ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .c-subsection li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+        
+        .c-subsection li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #FF4400;
+            font-weight: bold;
+        }
+        
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .highlight-box strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .strategic-fit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        .strategic-fit h2 {
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .fit-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .fit-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+        
+        .fit-card p {
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+        
+        .metric {
+            background: #FF4400;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>📊 Gachi 3C Analysis</h1>
+        
+        <div class="three-c-container">
+            <!-- CUSTOMER -->
+            <div class="c-section customer-section">
+                <div class="c-header">
+                    <div class="c-icon">👥</div>
+                    <div class="c-title">Customer</div>
+                </div>
+                <div class="c-content">
+                    <div class="c-subsection">
+                        <h3>Supply Side (Authors)</h3>
+                        <ul>
+                            <li><strong>Demographics:</strong> Ages 50-80, retired professionals</li>
+                            <li><strong>Pain Points:</strong> Retirement blues, loss of identity, isolation</li>
+                            <li><strong>Needs:</strong> Self-affirmation, legacy creation, income supplementation</li>
+                            <li><strong>Market Size (JP/KR):</strong> 45M people aged 60+</li>
+                        </ul>
+                        <div class="highlight-box">
+                            <strong>🎯 Key Insight:</strong>
+                            40% of Japanese 60+ fear "lonely death" (内閣府). They need a reason to feel valuable again.
+                        </div>
+                    </div>
+                    
+                    <div class="c-subsection">
+                        <h3>Demand Side (Readers)</h3>
+                        <ul>
+                            <li><strong>Demographics:</strong> Ages 25-45, career professionals</li>
+                            <li><strong>Pain Points:</strong> Job transfers, career changes, specific life challenges</li>
+                            <li><strong>Needs:</strong> Ultra-specific experiential knowledge</li>
+                            <li><strong>Willingness to Pay:</strong> ¥2,000-5,000 per book</li>
+                        </ul>
+                        <div class="highlight-box">
+                            <strong>💡 Example Demand:</strong>
+                            "How did someone handle a transfer to Fukuoka manufacturing plant in 1988?" - Worth ¥3,000
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COMPETITOR -->
+            <div class="c-section competitor-section">
+                <div class="c-header">
+                    <div class="c-icon">⚔️</div>
+                    <div class="c-title">Competitor</div>
+                </div>
+                <div class="c-content">
+                    <div class="c-subsection">
+                        <h3>Direct Competitors (Memoir)</h3>
+                        <ul>
+                            <li><strong>StoryWorth (US):</strong> Text-based, family pays, no AI editing</li>
+                            <li><strong>Remento (US):</strong> Voice→AI text, but family pays</li>
+                            <li><strong>Tell Mel (US):</strong> AI phone interview, English only</li>
+                            <li><strong>自分史.com (JP):</strong> ¥220K, human writers, no scalability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="c-subsection">
+                        <h3>Adjacent Competitors (Knowledge)</h3>
+                        <ul>
+                            <li><strong>note (JP):</strong> Creative writing, young users, no elderly focus</li>
+                            <li><strong>Brain (JP):</strong> Business how-to, exaggeration risk</li>
+                            <li><strong>Udemy:</strong> Systematic courses, not personal stories</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="c-subsection">
+                        <h3>⚠️ Major Threats</h3>
+                        <ul>
+                            <li><strong>MyHeritage Stories:</strong> Huge user base, recently added AI voice</li>
+                            <li><strong>Tell Mel:</strong> Similar tech, may expand to JP/KR</li>
+                        </ul>
+                        <div class="highlight-box">
+                            <strong>🛡️ Defense Strategy:</strong>
+                            File patents by Q2 2026. Capture JP/KR market before they enter.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COMPANY -->
+            <div class="c-section company-section">
+                <div class="c-header">
+                    <div class="c-icon">🚀</div>
+                    <div class="c-title">Company</div>
+                </div>
+                <div class="c-content">
+                    <div class="c-subsection">
+                        <h3>Core Competencies</h3>
+                        <ul>
+                            <li><strong>AI Tech Stack:</strong> Whisper v3 (STT), GPT-4o/Claude (editing), ElevenLabs (TTS)</li>
+                            <li><strong>Unique Algorithm:</strong> "Active follow-up questioning" to fill story gaps</li>
+                            <li><strong>JP/KR Language:</strong> Dialect support (Whisper v3 excels at this)</li>
+                            <li><strong>Ultra-niche Matching:</strong> Tags like "Fukuoka, manufacturing, 1988 transfer"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="c-subsection">
+                        <h3>Business Model Innovation</h3>
+                        <ul>
+                            <li><strong>Reader-Pays Model:</strong> World's first for memoirs</li>
+                            <li><strong>Free for Authors:</strong> Removes barrier to entry</li>
+                            <li><strong>30% Commission:</strong> Sustainable unit economics</li>
+                            <li><strong>Scalable via AI:</strong> No human editors needed</li>
+                        </ul>
+                        <div class="metric">
+                            Target: 1,000 books by 2027 = ¥60M revenue
+                        </div>
+                    </div>
+                    
+                    <div class="c-subsection">
+                        <h3>Future Expansion</h3>
+                        <ul>
+                            <li><strong>Healthcare:</strong> Voice analysis for dementia risk (patent-pending)</li>
+                            <li><strong>B2G:</strong> Partner with municipalities for elderly support budgets</li>
+                            <li><strong>Global:</strong> Southeast Asia, Chinese diaspora markets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="strategic-fit">
+            <h2>🎯 Strategic Fit: Why Gachi Wins</h2>
+            <div class="fit-grid">
+                <div class="fit-card">
+                    <h3>✅ Customer-Company Fit</h3>
+                    <p>Elderly need <strong>easy voice input</strong> + <strong>self-affirmation</strong>. Gachi provides both via AI that asks follow-up questions daily, making them feel heard and valued.</p>
+                </div>
+                
+                <div class="fit-card">
+                    <h3>✅ Company-Competitor Fit</h3>
+                    <p>Competitors either charge authors (高い参入障壁) or lack AI editing (低品質). Gachi uniquely combines <strong>free author access + high AI quality</strong>.</p>
+                </div>
+                
+                <div class="fit-card">
+                    <h3>✅ Customer-Competitor Gap</h3>
+                    <p>Readers want <strong>ultra-specific experiences</strong> ("Fukuoka manufacturing transfer"), not generic advice (Brain) or family stories (StoryWorth). <strong>Gachi is the only match.</strong></p>
+                </div>
+                
+                <div class="fit-card">
+                    <h3>✅ Blue Ocean Position</h3>
+                    <p>No competitor has: <strong>(1) Voice-first for elderly, (2) AI ghostwriting, (3) Reader-pays model</strong>. This is a <strong>¥1 trillion market waiting to be created</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

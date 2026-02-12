@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi 3C Analysis - PowerPoint Style</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            width: 1920px;
+            height: 1080px;
+            border-radius: 0;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 60px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.8em;
+            opacity: 0.95;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            padding: 50px 60px;
+            gap: 40px;
+        }
+        
+        .c-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .c-header {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            min-height: 140px;
+        }
+        
+        .customer-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+        
+        .competitor-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+        
+        .company-header {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+        }
+        
+        .c-icon {
+            font-size: 5em;
+            line-height: 1;
+        }
+        
+        .c-title-block {
+            flex: 1;
+        }
+        
+        .c-title {
+            font-size: 3em;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .c-subtitle {
+            font-size: 1.4em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .c-body {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 0 0 20px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            overflow-y: auto;
+        }
+        
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #FF4400;
+        }
+        
+        .section-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.3em;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .section li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 1.15em;
+            color: #34495e;
+        }
+        
+        .section li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #FF4400;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        
+        .highlight-title {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .highlight-text {
+            color: #34495e;
+            line-height: 1.6;
+            font-size: 1.15em;
+        }
+        
+        .metric-badge {
+            display: inline-block;
+            background: #FF4400;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 25px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-left {
+            font-size: 1.3em;
+        }
+        
+        .footer-right {
+            font-size: 2em;
+            font-weight: 700;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <h1>🎯 Gachi 3C Analysis</h1>
+            <div class="subtitle">Strategic Framework for JP/KR Market Entry</div>
+        </div>
+        
+        <div class="content">
+            <!-- CUSTOMER COLUMN -->
+            <div class="c-column">
+                <div class="c-header customer-header">
+                    <div class="c-icon">👥</div>
+                    <div class="c-title-block">
+                        <div class="c-title">Customer</div>
+                        <div class="c-subtitle">Two-Sided Market</div>
+                    </div>
+                </div>
+                <div class="c-body">
+                    <div class="section">
+                        <div class="section-title">
+                            <span class="section-icon">📝</span>
+                            Supply: Authors
+                        </div>
+                        <ul>
+                            <li><strong>Age:</strong> 50-80 yrs, retired professionals</li>
+                            <li><strong>Pain:</strong> Retirement blues, isolation, loss of identity</li>
+                            <li><strong>Need:</strong> Self-affirmation, legacy, passive income</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <span class="section-icon">💼</span>
+                            Demand: Readers
+                        </div>
+                        <ul>
+                            <li><strong>Age:</strong> 25-45 yrs, career professionals</li>
+                            <li><strong>Pain:</strong> Job transfers, specific life challenges</li>
+                            <li><strong>Need:</strong> Ultra-specific experiential knowledge</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <div class="highlight-title">🎯 Key Insight</div>
+                        <div class="highlight-text">
+                            <strong>40% of JP 60+ fear "lonely death"</strong> (内閣府). Market size: <strong>45M elderly in JP/KR</strong>. Willingness to pay: <strong>¥2K-5K per book</strong>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COMPETITOR COLUMN -->
+            <div class="c-column">
+                <div class="c-header competitor-header">
+                    <div class="c-icon">⚔️</div>
+                    <div class="c-title-block">
+                        <div class="c-title">Competitor</div>
+                        <div class="c-subtitle">Market Landscape</div>
+                    </div>
+                </div>
+                <div class="c-body">
+                    <div class="section">
+                        <div class="section-title">
+                            <span class="section-icon">📚</span>
+                            Memoir Services
+                        </div>
+                        <ul>
+                            <li><strong>StoryWorth/Remento:</strong> Family pays, text-based or basic AI</li>
+                            <li><strong>Tell Mel:</strong> AI phone, English only, premium pricing</li>
+                            <li><strong>自分史.com:</strong> ¥220K, manual, no scalability</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <span class="section-icon">💡</span>
+                            Knowledge Platforms
+                        </div>
+                        <ul>
+                            <li><strong>note:</strong> Creative writing, young users, no elderly focus</li>
+                            <li><strong>Brain:</strong> Business how-to, exaggeration risk</li>
+                            <li><strong>Udemy:</strong> Courses, not personal stories</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <div class="highlight-title">⚠️ Major Threat</div>
+                        <div class="highlight-text">
+                            <strong>MyHeritage Stories:</strong> Huge user base + recent AI voice addition = potential memoir market entry 2027.
+                            <div class="metric-badge">Defense: Patent by Q2 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- COMPANY COLUMN -->
+            <div class="c-column">
+                <div class="c-header company-header">
+                    <div class="c-icon">🚀</div>
+                    <div class="c-title-block">
+                        <div class="c-title">Company</div>
+                        <div class="c-subtitle">Unique Advantages</div>
+                    </div>
+                </div>
+                <div class="c-body">
+                    <div class="section">
+                        <div class="section-title">
+                            <span class="section-icon">🤖</span>
+                            Core Technology
+                        </div>
+                        <ul>
+                            <li><strong>AI Stack:</strong> Whisper v3 + GPT-4o/Claude + ElevenLabs</li>
+                            <li><strong>Patent-pending:</strong> Active follow-up questioning algorithm</li>
+                            <li><strong>JP/KR dialect:</strong> Superior to all competitors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">
+                            <span class="section-icon">💰</span>
+                            Business Model
+                        </div>
+                        <ul>
+                            <li><strong>Reader-Pays:</strong> World's first for memoirs</li>
+                            <li><strong>Free for authors:</strong> Zero barrier to entry</li>
+                            <li><strong>30% commission:</strong> Sustainable economics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight">
+                        <div class="highlight-title">🌟 Blue Ocean</div>
+                        <div class="highlight-text">
+                            <strong>NO competitor has:</strong> Voice + AI + Elderly + Reader-pays simultaneously. Ultra-niche matching ("Fukuoka manufacturing transfer 1988").
+                            <div class="metric-badge">¥1 Trillion Market</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-left">
+                Strategic Fit: Customer needs + Company strengths = Competitive moat in untapped market
+            </div>
+            <div class="footer-right">
+                ✓ Blue Ocean Confirmed
+            </div>
+        </div>
+    </div>
+</body>
+</html>

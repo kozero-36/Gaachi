@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gachi Business Model</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            text-align: center;
+            color: #FF4400;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+        
+        .model-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .actor {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .actor-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .platform-box {
+            background: linear-gradient(135deg, #FF4400 0%, #FF6B35 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .reader-box {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .actor-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+        
+        .actor-title {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .actor-desc {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .arrow {
+            font-size: 3em;
+            color: #2c3e50;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        .flow-label {
+            position: absolute;
+            background: #2c3e50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .arrow-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #FF4400;
+        }
+        
+        .value-card h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .value-card p {
+            color: #7f8c8d;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .key-metric {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #2c3e50;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.8em;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1>🎯 Gachi Business Model</h1>
+        <p class="tagline">"Voice → AI → Marketplace" - World's First Reader-Pays Memoir Platform</p>
+        
+        <div class="model-container">
+            <!-- Authors (Supply Side) -->
+            <div class="actor">
+                <div class="actor-box">
+                    <div class="actor-icon">👴👵</div>
+                    <div class="actor-title">Authors</div>
+                    <div class="actor-desc">
+                        Elderly (50-80 years)<br>
+                        <strong>Share experiences via voice</strong><br>
+                        <strong style="font-size: 1.3em; color: #FFD700;">100% FREE</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Arrow 1 -->
+            <div class="arrow-container">
+                <div class="arrow">→</div>
+                <div class="flow-label" style="top: -40px;">Daily voice recording</div>
+            </div>
+            
+            <!-- Platform -->
+            <div class="actor">
+                <div class="platform-box">
+                    <div class="actor-icon">🤖</div>
+                    <div class="actor-title">Gachi Platform</div>
+                    <div class="actor-desc">
+                        AI Auto-Editing<br>
+                        Smart Matching<br>
+                        <strong>30% Commission</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Arrow 2 -->
+            <div class="arrow-container">
+                <div class="arrow">→</div>
+                <div class="flow-label" style="top: -40px;">Published books</div>
+            </div>
+            
+            <!-- Readers (Demand Side) -->
+            <div class="actor">
+                <div class="reader-box">
+                    <div class="actor-icon">💼🎓</div>
+                    <div class="actor-title">Readers</div>
+                    <div class="actor-desc">
+                        People seeking specific experiences<br>
+                        <strong>Pay ¥2,000-5,000/book</strong><br>
+                        70% goes to author
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="value-props">
+            <div class="value-card">
+                <h3>🎁 For Authors</h3>
+                <p><strong>Free to use</strong> | Combat retirement blues | Earn passive income | AI handles all editing</p>
+            </div>
+            
+            <div class="value-card">
+                <h3>🎯 For Readers</h3>
+                <p><strong>Ultra-niche matching</strong> | "Fukuoka manufacturing transfer" | "Yoyogi cafe management" | Real experiences, not theory</p>
+            </div>
+            
+            <div class="value-card">
+                <h3>💰 For Gachi</h3>
+                <p><strong>Scalable AI</strong> | 30% commission | No human editors needed | Expand to dementia prevention</p>
+            </div>
+        </div>
+        
+        <div class="key-metric">
+            🌟 Unique Value: Authors create for FREE, Readers pay for REAL experience knowledge
+        </div>
+    </div>
+</body>
+</html>
